@@ -41,7 +41,7 @@
 
 ## 🚀 About The Project
 
-Evangadi Forum is a **Q&A platform** inspired by StackOverflow, designed for collaborative learning.  
+Evangadi Forum is a **Q&A platform**  designed for collaborative learning.  
 Users can:  
 - Register and log in securely  
 - Ask questions  
