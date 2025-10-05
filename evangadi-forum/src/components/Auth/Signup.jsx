@@ -20,58 +20,75 @@ const Signup = () => {
   };
 
   return (
-    <div className={styles.authContainer}>
-      <h2>Join The Network</h2>
-      <form onSubmit={handleSubmit} className={styles.authForm}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="firstName"
-          placeholder="First Name"
-          value={form.firstName}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="lastName"
-          placeholder="Last Name"
-          value={form.lastName}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
+    <div className={styles.authPageWrapper}>
+      <div className={styles.authContainer}>
+        <h2>Join The Network</h2>
+        <form onSubmit={handleSubmit} className={styles.authForm}>
+          {/* FIX: Applying the 'styles.authForm input' class to all inputs */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className={styles.authForm__input} // Added class
+          />
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            value={form.firstName}
+            onChange={handleChange}
+            required
+            className={styles.authForm__input} // Added class
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            value={form.lastName}
+            onChange={handleChange}
+            required
+            className={styles.authForm__input} // Added class
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={form.password}
+            onChange={handleChange}
+            required
+            className={styles.authForm__input} // Added class
+          />
 
-        <div className={styles.checkbox}>
-          <input type="checkbox" id="agree" required />
-          <label htmlFor="agree">
-            I agree to the privacy policy and terms of service.
-          </label>
-        </div>
+          <div className={styles.checkbox}>
+            <input type="checkbox" id="agree" required />
+            <label htmlFor="agree">
+              I agree to the{" "}
+              <Link to="/privacy" className={styles.link}>
+                privacy policy
+              </Link>{" "}
+              and{" "}
+              <Link to="/terms" className={styles.link}>
+                terms of service
+              </Link>
+              .
+              {/* The first image links the words 'privacy policy' and 'terms of service', which is good practice. */}
+            </label>
+          </div>
 
-        <button type="submit">Agree and Join</button>
+          {/* The button already uses the styling from .authForm button */}
+          <button type="submit">Agree and Join</button>
 
-        <p>
-          Already have an account?{" "}
-          <Link to="/signin" className={styles.link}>
-            Log in
-          </Link>
-        </p>
-      </form>
+          <p>
+            Already have an account?{" "}
+            <Link to="/signin" className={styles.link}>
+              Log in
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

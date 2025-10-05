@@ -1,21 +1,32 @@
-/* src/components/Auth/Auth.module.css */
+.authPageWrapper {
+  /* This style will force the container to the left */
+  display: flex;
+  justify-content: flex-start;
+  width: 100%; /* Ensure it spans the full width of its parent */
+  padding-left: 50px; /* Use this for the offset from the left edge */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
 
+/* Update .authContainer to remove its self-centering */
 .authContainer {
   max-width: 400px;
-  margin: 60px auto;
+  /* CHANGE: Remove centering margin, but keep vertical margin */
+  margin: 60px 0 0 0;
   padding: 30px;
   border: 1px solid #ddd;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   background-color: #fff;
 }
-
-.authContainer h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #222;
+/* ... rest of your CSS ... */
+.authForm input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #fff;
 }
-
 .authForm {
   display: flex;
   flex-direction: column;
@@ -39,9 +50,16 @@
   cursor: pointer;
   transition: 0.3s;
 }
+.authForm button {
+  background-color: #ff6600;
+}
 
 .authForm button:hover {
   background-color: #e65c00;
+}
+
+.link {
+  color: #ff6600;
 }
 
 .checkbox {
