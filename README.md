@@ -15,10 +15,8 @@
     <br />
     <br />
     <a href="https://evangadi-forum-demo.netlify.app">View Demo</a>
-    ·
-    <a href="https://github.com/your-team/evangadi-forum/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/your-team/evangadi-forum/issues">Request Feature</a>
+        <a href="https://evangadi-forum-backend-project.onrender.com/">Get Render API End Point</a>
+
   </p>
 </div>
 
