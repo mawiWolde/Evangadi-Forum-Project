@@ -1,88 +1,117 @@
 .authPageWrapper {
-  /* This style will force the container to the left */
   display: flex;
-  justify-content: flex-start;
-  width: 100%; /* Ensure it spans the full width of its parent */
-  padding-left: 50px; /* Use this for the offset from the left edge */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f0f2f5;
 }
 
-/* Update .authContainer to remove its self-centering */
 .authContainer {
   max-width: 400px;
-  /* CHANGE: Remove centering margin, but keep vertical margin */
-  margin: 60px 0 0 0;
-  padding: 30px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
   background-color: #fff;
-}
-/* ... rest of your CSS ... */
-.authForm input {
-  padding: 12px;
-  margin-bottom: 15px;
+  padding: 40px;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.authContainer h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.authContainer p {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
 .authForm {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-.authForm input {
+.authForm__input {
+  width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
-.authForm button {
-  background-color: #ff6600;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.authForm button {
-  background-color: #ff6600;
+.nameRow {
+  display: flex;
+  gap: 10px;
 }
 
-.authForm button:hover {
-  background-color: #e65c00;
-}
-
-.link {
-  color: #ff6600;
+.nameRow input {
+  flex: 1;
 }
 
 .checkbox {
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
 }
 
-.checkbox label {
-  margin-left: 8px;
-  font-size: 14px;
-}
-
-.link {
-  color: #ff6600;
+ .link,
+.linkOrange {
+  color: #f18b00; /* orange by default */
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.link:hover {
+.link:hover,
+.link:active,
+.linkOrange:hover,
+.linkOrange:active {
+  color: #4460f1; /* blue when hovered or clicked */
   text-decoration: underline;
 }
 
-.authForm p {
+/* Optional for bottom text (keeps spacing nice) */
+.bottomText {
   text-align: center;
-  margin-top: 15px;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #f18b00;
+}
+
+
+.submitButton {
+  width: 100%;
+  background-color: #f18b00; /* orange by default */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+   transition: background-color 0.3s ease;
+}
+
+.submitButton:hover,
+.submitButton:active {
+  background-color: #3b55db;
+}
+
+.bottomText {
+  color: #f18b00;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.forgotPasswordWrapper {
+  text-align: right;
+  margin-top: 6px;
+  margin-bottom: 16px;
 }
