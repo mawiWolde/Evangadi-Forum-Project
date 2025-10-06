@@ -1,0 +1,125 @@
+/* General section styling */
+.explained {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background: #fff;
+  border-radius: 8px;
+  line-height: 1.7;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title section */
+.evan_net_exp .title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.evan_net_exp .title h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+.evan_net_exp .title small {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Main content */
+.notse h1 {
+  font-size: 1.8rem;
+  margin: 30px 0 15px;
+  color: #0055aa;
+}
+
+.notse h3 {
+  font-size: 1.2rem;
+  margin: 25px 0 10px;
+  color: #444;
+}
+
+.notse p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.notse hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 25px 0;
+}
+
+/* Lists */
+.notse ul {
+  list-style: none;
+  margin: 20px 0;
+  padding-left: 0;
+}
+
+.notse ul li {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background: #f9f9f9;
+  border-left: 5px solid #8ad62b;
+  border-radius: 4px;
+}
+
+.notse ul li div {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.notse ul li p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Units section */
+.units {
+  margin: 30px 0;
+  padding: 20px;
+  background: #f4f9ff;
+  border-left: 5px solid #0055aa;
+  border-radius: 6px;
+}
+
+.units h6 {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #777;
+}
+
+.units h4 {
+  margin: 10px 0;
+  color: #0055aa;
+  font-size: 1.2rem;
+}
+
+/* Quotation */
+.qoutation {
+  margin: 40px 0;
+  text-align: center;
+  background: #fff8e6;
+  padding: 20px;
+  border-radius: 6px;
+  border-left: 5px solid #f2dd9d;
+}
+
+.qoutation h3 {
+  font-size: 1.3rem;
+  color: #444;
+}
+
+.qout {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}

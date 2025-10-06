@@ -1,0 +1,114 @@
+/* Container */
+.page__container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* Page header */
+.page__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page__header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+.page__header small {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Headings */
+.page__container h2 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #1e3a8a;
+  border-left: 4px solid #2563eb;
+  padding-left: 0.5rem;
+}
+
+/* Paragraphs */
+.page__container p {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* Lists */
+.page__container ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.page__container li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* Links */
+.page__container a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.page__container a:hover {
+  text-decoration: underline;
+  color: #1e40af;
+}
+
+/* Horizontal rule */
+.page__container hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 768px) {
+  .page__container {
+    padding: 1.5rem;
+  }
+
+  .page__header h1 {
+    font-size: 1.6rem;
+  }
+
+  .page__container h2 {
+    font-size: 1.2rem;
+  }
+
+  .page__container p,
+  .page__container li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page__container {
+    padding: 1rem;
+  }
+
+  .page__header h1 {
+    font-size: 1.4rem;
+  }
+
+  .page__container h2 {
+    font-size: 1.1rem;
+  }
+
+  .page__container p,
+  .page__container li {
+    font-size: 0.9rem;
+  }
+}

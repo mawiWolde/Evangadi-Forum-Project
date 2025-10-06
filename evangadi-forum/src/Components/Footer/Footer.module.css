@@ -1,0 +1,145 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0b0d17;
+  color: #fff;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Main layout ===== */
+.footerContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* 🔹 All top-aligned evenly */
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  gap: 2rem;
+}
+
+/* ===== Logo + Social Icons ===== */
+.logoSection {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 🔹 keeps logo + icons aligned nicely */
+  justify-content: flex-start;
+}
+
+.logoSection img {
+  max-width: 130px;
+  margin-bottom: 0.8rem;
+  display: block; /* 🔹 removes baseline alignment issue */
+}
+
+.logoSection a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.logoSection a:hover {
+  color: #fca311;
+}
+
+/* ===== Useful Links ===== */
+.linksSection {
+  flex: 1;
+  min-width: 200px;
+}
+
+.linksSection h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.linksSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksSection li {
+  margin-bottom: 0.4rem;
+}
+
+.linksSection a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.linksSection a:hover {
+  color: #fca311;
+}
+
+/* ===== Contact Info ===== */
+.contactInfo {
+  flex: 1;
+  min-width: 200px;
+}
+
+.contactInfo h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.contactInfo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactInfo li {
+  margin-bottom: 0.4rem;
+}
+
+.contactInfo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.contactInfo a:hover {
+  color: #fca311;
+}
+
+/* ===== Bottom copyright ===== */
+.copy {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: #ccc;
+  border-top: 1px solid #333;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .logoSection,
+  .linksSection,
+  .contactInfo {
+    text-align: center;
+    align-items: center;
+  }
+
+  .logoSection a {
+    margin-right: 0.6rem;
+  }
+}

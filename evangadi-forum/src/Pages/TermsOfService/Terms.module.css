@@ -1,0 +1,106 @@
+/* General container for all legal pages */
+.page__container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background: #fff;
+}
+
+/* Header section */
+.page__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page__header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.page__header small {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Headings inside content */
+.page__container h2 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.8rem;
+  color: #0a66c2; /* blue accent */
+  font-weight: 600;
+}
+
+/* Paragraph text */
+.page__container p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Lists */
+.page__container ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style: disc;
+}
+
+.page__container li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Links */
+.page__container a {
+  color: #0a66c2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.page__container a:hover {
+  color: #004182;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .page__container {
+    padding: 1.5rem;
+  }
+
+  .page__header h1 {
+    font-size: 1.6rem;
+  }
+
+  .page__container h2 {
+    font-size: 1.2rem;
+  }
+
+  .page__container p,
+  .page__container li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page__container {
+    padding: 1rem;
+  }
+
+  .page__header h1 {
+    font-size: 1.4rem;
+  }
+
+  .page__container h2 {
+    font-size: 1.1rem;
+  }
+
+  .page__container p,
+  .page__container li {
+    font-size: 0.9rem;
+  }
+}
