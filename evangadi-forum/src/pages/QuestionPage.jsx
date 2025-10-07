@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./questionpage.module.css";
+import { FaArrowCircleRight } from "react-icons/fa";
 
 function QuestionPage() {
   const [title, setTitle] = useState("");
@@ -38,32 +39,46 @@ function QuestionPage() {
 
   return (
     <div className={styles.container}>
-      <h2>Steps to write a good question</h2>
-      <ul className={styles.steps}>
-        <li>Summarize your problem in a one-line title.</li>
-        <li>Describe your problem in detail.</li>
-        <li>Explain what you tried and what you expected.</li>
-      </ul>
+      <div className={styles.steps}>
+        <h2>Steps To Write A Good Question.</h2>
+        <ul>
+          <li>
+            <FaArrowCircleRight className={styles.icon} /> Summarize your
+            problems in a one-line-title.
+          </li>
+          <li>
+            <FaArrowCircleRight className={styles.icon} /> Describe your problem
+            in more detail.
+          </li>
+          <li>
+            <FaArrowCircleRight className={styles.icon} /> Describe what you
+            tried and what you expected to happen.
+          </li>
+          <li>
+            <FaArrowCircleRight className={styles.icon} /> Review your question
+            and post it here.
+          </li>
+        </ul>
+      </div>
 
       <div className={styles.formBox}>
-        <h3>Ask a public question</h3>
-        <p className={styles.link}>Go to Question page</p>
+        <h3>Post Your Question</h3>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
             type="text"
-            placeholder="Title"
+            placeholder="Question title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className={styles.input}
           />
           <textarea
-            placeholder="Question Description..."
+            placeholder="Question detail ..."
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className={styles.textarea}
           />
           <button type="submit" className={styles.button}>
-            Post Your Question
+            Post Question
           </button>
         </form>
         {message && <p>{message}</p>}

@@ -2,44 +2,57 @@
   max-width: 700px;
   margin: 40px auto;
   font-family: Arial, sans-serif;
-  text-align: center;
+  padding: 0 15px;
+  text-align: center; /* ensures children can be centered */
 }
 
 .steps {
-  margin-bottom: 30px;
+  display: inline-block; /* allows centering */
+  text-align: left; /* bullets/text align left */
+  margin-bottom: 25px;
 }
 
 .steps h2 {
+  text-align: center;
   font-size: 22px;
-  margin-bottom: 15px;
   font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .steps ul {
   list-style: disc;
-  text-align: left;
-  display: inline-block;
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.steps li {
+  margin-bottom: 8px;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
+  color: #333;
 }
 
 .formBox {
   background: #fff;
   padding: 25px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin: 0 auto; /* keep form centered */
 }
 
 .formBox h3 {
   margin-bottom: 5px;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .link {
   font-size: 14px;
-  color: #555;
+  color: #666;
   margin-bottom: 15px;
+  display: block;
 }
 
 .form {
@@ -48,33 +61,38 @@
   gap: 12px;
 }
 
-.input {
+.input,
+.textarea {
+  box-sizing: border-box;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%;
 }
 
 .textarea {
-  padding: 10px;
-  font-size: 14px;
   height: 120px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   resize: vertical;
 }
 
 .button {
   align-self: flex-start;
-  padding: 10px 15px;
+  padding: 10px 18px;
   background: #4a63e7;
   color: #fff;
   font-size: 14px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.2s;
 }
-
+.icon {
+  margin-right: 8px;
+  color: #4a63e7;
+  font-size: 18px;
+  vertical-align: middle;
+}
 .button:hover {
   background: #3b52c5;
 }
