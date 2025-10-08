@@ -49,14 +49,14 @@ const Home = ({ currentUser, questions }) => {
             <div
               key={q.question_id}
               className={styles.userRow}
-              onClick={() => navigate(`/question/${q.question_id}`)} // ✅ navigate to AnswerPage
+              onClick={() => navigate(`/question/${q.question_id}`)} 
             >
               <div className={styles.userInfo}>
                 <IoPersonCircle
                   size={71}
                   color="#333"
                   style={{
-                    display: "block", // ✅ correct place for display
+                    display: "block", 
                     marginRight: "8px",
                   }}
                 />{" "}
