@@ -1,6 +1,5 @@
 import React from "react";
-// import "./Terms.css"; // import the CSS file
-import styles from "../TermsOfService/Terms.module.css";
+import styles from "./Terms.module.css";
 const Terms = () => {
   return (
     <div className="terms-container">
