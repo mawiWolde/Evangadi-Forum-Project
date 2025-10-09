@@ -5,7 +5,7 @@ import {
   FaSignInAlt,
   FaQuestionCircle,
   FaReply,
-  FaSmile,
+  FaSmile
 } from "react-icons/fa";
 
 const HowItWorks = () => {

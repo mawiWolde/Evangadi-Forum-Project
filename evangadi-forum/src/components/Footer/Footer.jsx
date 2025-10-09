@@ -1,58 +1,94 @@
+import { Link } from "react-router-dom";
+import styles from "./Footer.module.css";
 
-import React from "react";
-import logo from "../../assets/evangadi-logo-footer.png";
-import { FaFacebookF, FaInstagram, FaYoutube,FaTwitter, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom"; // only for internal navigation
-import styles from './Footer.module.css'
+// Assuming the logo is available here (as per previous context)
+import EvangadiLogo from "../../assets/footerlogo.png";
+// Assuming you have SVG or font-awesome icons for socials (placeholders used here)
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
-
   return (
+    // 1. Component Structure
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
-        {/* Evangadi Logo */}
-        <div className={styles.logoSection}>
-          <img src={logo} alt="Evangadi Logo" />
-          <div>
-           <a href="https://www.facebook.com/evangaditech" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://www.instagram.com/evangaditech/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://www.youtube.com/@EvangadiTech" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-           <a href="https://twitter.com/evangaditech" target="_blank" rel="noopener noreferrer"><FaTwitter/></a>
-            <a href="https://www.linkedin.com/company/evangaditech" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-        </div>
-        </div>
+        {/* === Column 1: Logo and Socials === */}
+        <div className={styles.logoAndSocials}>
+          <Link to="/" className={styles.logoLink}>
+            <img
+              src={EvangadiLogo}
+              alt="Evangadi Forum Logo"
+              className={styles.logoImage}
+            />
+          </Link>
 
-        {/* Links */}
-        <div className={styles.linksSection}>
-           <h4>Useful Links</h4>
-          <ul>
-            <li><Link to="/how-it-works">How it works</Link></li>
-            <li><Link to="/terms">Terms of Service</Link></li>
-            <li><Link to="/privacy">Privacy Policy</Link></li>
-          </ul>
-        </div>
-
-
-        <div className={styles.contactInfo}>
-          <h4>Contact Info </h4>
           <div className={styles.socialIcons}>
-            <ul>
-            <li><Link to="/evangadi_Networks">Evangadi Networks</Link></li>
-            <li><Link to="/suport">Support@evangadi.com</Link></li>
-            <li><Link to="/phone">+1-202-306-2702</Link></li>
-          </ul>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIcon}
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIcon}
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialIcon}
+            >
+              <FaYoutube />
+            </a>
           </div>
         </div>
-      </div>
 
-      <p className={styles.copy}>
-        &copy; {new Date().getFullYear()} Evangadi.com. All rights reserved.
-      </p>
+        {/* === Column 2: Useful Links === */}
+        <div className={styles.footerSection}>
+          <h4 className={styles.sectionTitle}>Useful Link</h4>
+          <ul className={styles.linkList}>
+            <li>
+              <Link to="/detail" className={styles.footerLink}>
+                How it works
+              </Link>
+            </li>
+            <li>
+              <Link to="/terms" className={styles.footerLink}>
+                Terms of Service
+              </Link>
+            </li>
+            <li>
+              <Link to="/privacy" className={styles.footerLink}>
+                Privacy policy
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* === Column 3: Contact Info === */}
+        <div className={styles.footerSection}>
+          <h4 className={styles.sectionTitle}>Contact Info</h4>
+          <p className={styles.contactText}>Evangadi Networks</p>
+          <p className={styles.contactText}>
+            <a href="mailto:support@evangadi.com" className={styles.footerLink}>
+              support@evangadi.com
+            </a>
+          </p>
+          <p className={styles.contactText}>
+            <a href="tel:+12023862702" className={styles.footerLink}>
+              +1 202-386-2702
+            </a>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };
 
 export default Footer;
-
-
-

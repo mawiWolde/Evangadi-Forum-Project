@@ -1,117 +1,194 @@
-.authPageWrapper {
+/* Page wrapper — scrollable + centered */
+.signupPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  background-color: #ffffff;
   min-height: 100vh;
-  background-color: #f0f2f5;
+  padding: 50px 0; /* allows scroll space */
+  overflow-y: auto; /* scrollable when needed */
+  box-sizing: border-box;
 }
 
-.authContainer {
-  max-width: 400px;
+/* 🔹 Signup box */
+.signupContainer {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.authContainer h2 {
+  max-width: 400px;
+  padding: 25px 20px;
   text-align: center;
-  margin-bottom: 8px;
-  font-weight: 600;
+  margin: 40px 0; /* adds top/bottom spacing for scroll */
 }
 
-.authContainer p {
-  text-align: center;
-  color: #555;
-  font-size: 14px;
-  margin-bottom: 20px;
+/* Titles */
+.mainTitle {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #0a0a23;
 }
 
-.authForm {
+.subTitle {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Form */
+.signupForm {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.authForm__input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  box-sizing: border-box;
+  gap: 10px;
 }
 
 .nameRow {
   display: flex;
-  gap: 10px;
-}
-
-.nameRow input {
-  flex: 1;
-}
-
-.checkbox {
-  display: flex;
-  align-items: flex-start;
   gap: 8px;
-  font-size: 13px;
-  color: #555;
 }
 
- .link,
-.linkOrange {
-  color: #f18b00; /* orange by default */
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.link:hover,
-.link:active,
-.linkOrange:hover,
-.linkOrange:active {
-  color: #4460f1; /* blue when hovered or clicked */
-  text-decoration: underline;
-}
-
-/* Optional for bottom text (keeps spacing nice) */
-.bottomText {
-  text-align: center;
-  font-size: 14px;
-  margin-top: 10px;
-  color: #f18b00;
-}
-
-
-.submitButton {
+.signupForm input {
   width: 100%;
-  background-color: #f18b00; /* orange by default */
-  color: white;
-  padding: 12px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.signupForm input:focus {
+  border-color: #007bff;
+}
+
+/* Buttons */
+.yellowButtonSmall,
+.blueButtonSmall {
+  padding: 6px 10px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-   transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  transition: 0.3s;
 }
 
-.submitButton:hover,
-.submitButton:active {
-  background-color: #3b55db;
+.yellowButtonSmall {
+  color: #ffb700;
+}
+
+.yellowButtonSmall:hover {
+  background-color: #0056b3;
+}
+
+.blueButtonSmall {
+  background-color: #007bff;
+  color: white;
+}
+
+.blueButtonSmall:hover {
+  background-color: #0056b3;
+}
+
+/* Terms text */
+.termsSection h3 {
+  font-size: 0.9rem;
+  margin: 12px 0;
+  color: #333;
 }
 
 .bottomText {
-  color: #f18b00;
-  text-align: center;
-  font-size: 14px;
+  font-size: 0.9rem;
   margin-top: 10px;
+  color: #333;
 }
-.forgotPasswordWrapper {
-  text-align: right;
-  margin-top: 6px;
-  margin-bottom: 16px;
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .signupContainer {
+    padding: 20px 15px;
+    margin: 20px 0;
+  }
+
+  .mainTitle {
+    font-size: 1.4rem;
+  }
+}
+.signupContainer {
+  position: relative; /* important for pseudo-element positioning */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 30px;
+  text-align: center;
+  overflow: hidden; /* ensures blur doesn’t overflow the edges */
+}
+
+/* Add this blurred blue corner effect */
+.signupContainer::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 123, 255, 0.4); /* light blue tint */
+  filter: blur(80px); /* strong blur */
+  z-index: 0;
+}
+
+/* make sure the form and content stay above the blur */
+.signupContainer * {
+  position: relative;
+  z-index: 1;
+}
+
+/* login style */
+.signupContainer::before {
+  content: "";
+  justify-content: center;
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 123, 255, 0.4);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.forgotPassword {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  color: #ffb700;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.linkButton:hover {
+  color: #0056b3;
+}
+
+/* Adjust spacing for login form */
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.signupWrapper {
+  justify-content: center;
 }
