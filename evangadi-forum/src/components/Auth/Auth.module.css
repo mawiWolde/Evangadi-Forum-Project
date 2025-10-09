@@ -1,0 +1,117 @@
+.authPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.authContainer {
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.authContainer h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.authContainer p {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.authForm__input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.nameRow {
+  display: flex;
+  gap: 10px;
+}
+
+.nameRow input {
+  flex: 1;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+ .link,
+.linkOrange {
+  color: #f18b00; /* orange by default */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.link:hover,
+.link:active,
+.linkOrange:hover,
+.linkOrange:active {
+  color: #4460f1; /* blue when hovered or clicked */
+  text-decoration: underline;
+}
+
+/* Optional for bottom text (keeps spacing nice) */
+.bottomText {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #f18b00;
+}
+
+
+.submitButton {
+  width: 100%;
+  background-color: #f18b00; /* orange by default */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+   transition: background-color 0.3s ease;
+}
+
+.submitButton:hover,
+.submitButton:active {
+  background-color: #3b55db;
+}
+
+.bottomText {
+  color: #f18b00;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.forgotPasswordWrapper {
+  text-align: right;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
