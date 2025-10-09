@@ -1,0 +1,91 @@
+.aboutContainer {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* Use flex to control content and graphic placement */
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative; /* Needed for positioning the abstract graphic */
+}
+
+.aboutContent {
+  max-width: 650px; /* Limit width of text block */
+}
+
+/* Headings and Subheadings */
+.subHeading {
+  font-size: 18px;
+  color: #ff8c00; /* Orange color */
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.mainHeading {
+  font-size: 44px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.paragraph {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* "HOW IT WORKS" Button Styling */
+.howItWorksButton {
+  display: inline-block;
+  background-color: #ff8c00; /* Orange background */
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.howItWorksButton:hover {
+  background-color: #e07b00;
+}
+
+/* Abstract Corner Graphic */
+
+.abstractGraphic {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 15vw; /* 15% of viewport width */
+  height: 15vw; /* keep it square */
+  max-width: 400px; /* optional: prevent it from being too huge */
+  max-height: 400px;
+  min-width: 200px; /* optional: ensure minimum size on small screens */
+  min-height: 200px;
+  background-color: #ffcccc;
+  border-top-left-radius: 100%;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 36px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+
+  .abstractGraphic {
+    /* Hide graphic on very small screens or make it smaller */
+    display: none;
+  }
+}

@@ -1,11 +1,11 @@
-.import React from "react";
+import React from "react";
 import styles from "./How.module.css";
 import {
   FaUserPlus,
   FaSignInAlt,
   FaQuestionCircle,
   FaReply,
-  FaSmile,
+  FaSmile
 } from "react-icons/fa";
 
 const HowItWorks = () => {

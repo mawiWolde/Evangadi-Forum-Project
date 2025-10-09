@@ -11,11 +11,15 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.0",
+    "axios": "^1.12.2",
     "dotenv": "^17.2.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.9.3"
+    "react-router-dom": "^7.9.3",
+    "react-spinners": "^0.17.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

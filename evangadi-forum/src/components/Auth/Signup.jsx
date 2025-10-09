@@ -1,112 +1,138 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Auth.module.css";
+import { signupUser } from "../../services/api";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Signup = () => {
-  const [form, setForm] = useState({
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
     username: "",
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
-    password: "",
+    password: ""
   });
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setError("");
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Signup data:", form);
+    const { username, first_name, last_name, email, password } = formData;
+
+    if (!username || !first_name || !last_name || !email || !password) {
+      setError("Please fill in all fields.");
+      return;
+    }
+
+    try {
+      await signupUser(formData);
+      alert("Signup successful! Please login.");
+      navigate("/auth/login");
+    } catch (err) {
+      if (err.response) {
+        setError(err.response.data.message || "Signup failed. Try again.");
+      } else {
+        setError("Network error. Please check your connection.");
+      }
+    }
   };
 
   return (
-    <div className={styles.authPageWrapper}>
-      <div className={styles.authContainer}>
-        <h2>Join the network</h2>
-        <p>
+    <div className={styles.signupPage}>
+      <div className={styles.signupContainer}>
+        <h1 className={styles.mainTitle}>Join the Network</h1>
+        <h3 className={styles.subTitle}>
           Already have an account?{" "}
-          <Link to="/signin" className={styles.linkOrange}>
-            Sign in
-          </Link>
-        </p>
+          <button
+            onClick={() => navigate("/auth/login")}
+            className={styles.yellowButtonSmall}
+          >
+            Sign In
+          </button>
+        </h3>
 
-        <form onSubmit={handleSubmit} className={styles.authForm}>
+        <form onSubmit={handleSubmit} className={styles.signupForm}>
           <input
             type="text"
             name="username"
             placeholder="Username"
-            value={form.username}
+            value={formData.username}
             onChange={handleChange}
-            required
-            className={styles.authForm__input}
           />
-
           <div className={styles.nameRow}>
             <input
               type="text"
-              name="firstName"
+              name="first_name"
               placeholder="First name"
-              value={form.firstName}
+              value={formData.first_name}
               onChange={handleChange}
-              required
-              className={styles.authForm__input}
             />
             <input
               type="text"
-              name="lastName"
+              name="last_name"
               placeholder="Last name"
-              value={form.lastName}
+              value={formData.last_name}
               onChange={handleChange}
-              required
-              className={styles.authForm__input}
             />
           </div>
-
           <input
             type="email"
             name="email"
             placeholder="Email address"
-            value={form.email}
+            value={formData.email}
             onChange={handleChange}
-            required
-            className={styles.authForm__input}
           />
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={handleChange}
-            required
-            className={styles.authForm__input}
-          />
-
-          <div className={styles.checkbox}>
-            <input type="checkbox" id="agree" required />
-            <label htmlFor="agree">
-              I agree to the{" "}
-              <Link to="/privacy" className={styles.link}>
-                privacy policy
-              </Link>{" "}
-              and{" "}
-              <Link to="/terms" className={styles.link}>
-                terms of service
-              </Link>
-            </label>
+          {/* Password field with toggle icon */}
+          <div style={{ position: "relative" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              style={{ width: "100%" }}
+            />
+            <FontAwesomeIcon
+              icon={showPassword ? faEyeSlash : faEye}
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+                fontSize: "18px",
+                color: "#555"
+              }}
+            />
           </div>
 
-          <button type="submit" className={styles.submitButton}>
+          {error && <p className={styles.error}>{error}</p>}
+
+          <div className={styles.termsSection}>
+            <h3>
+              I agree to the{" "}
+              <button type="button" className={styles.yellowButtonSmall}>
+                Privacy Policy
+              </button>{" "}
+              and{" "}
+              <button type="button" className={styles.yellowButtonSmall}>
+                Terms of Service
+              </button>
+            </h3>
+          </div>
+
+          <button type="submit" className={styles.blueButtonSmall}>
             Agree and Join
           </button>
-
-          <p className={styles.bottomText}>
-            Already have an account?{" "}
-            <Link to="/signin" className={styles.linkOrange}>
-              Already have an account?
-            </Link>
-          </p>
         </form>
       </div>
     </div>
