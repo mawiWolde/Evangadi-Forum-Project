@@ -1,90 +1,132 @@
-import React, { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./questionpage.module.css";
+import api from "../services/api";
+import { AuthContext } from "../context/AuthContext";
 import { FaArrowCircleRight } from "react-icons/fa";
 
-function QuestionPage() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+const QuestionPage = () => {
+  const { token } = useContext(AuthContext);
+  const [questions, setQuestions] = useState([]);
+  const [search] = useState({ title: "", description: "" });
+  const [newQuestion, setNewQuestion] = useState({
+    title: "",
+    description: ""
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const fetchQuestions = async () => {
     try {
-      const res = await fetch(
-        "https://evangadi-forum-backend-project.onrender.com/api/questions",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`
-          },
-          body: JSON.stringify({ title, description })
-        }
-      );
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setMessage("Question posted successfully");
-        setTitle("");
-        setDescription("");
-      } else {
-        setMessage(data.msg || "Something went wrong");
-      }
+      setLoading(true);
+      const res = await api.get("/question");
+      setQuestions(res.data.questions || []);
     } catch (err) {
-      setMessage("Failed to connect to server");
+      console.error(err);
+      setError("Failed to load questions. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
+  useEffect(() => {
+    fetchQuestions();
+  }, []);
+
+  const handleChange = (e, stateUpdater) => {
+    const { name, value } = e.target;
+    stateUpdater((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePostQuestion = async () => {
+    if (!newQuestion.title.trim() || !newQuestion.description.trim()) {
+      setMessage("Please enter both title and description.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      setMessage("");
+      const res = await api.post("/question", newQuestion);
+      setQuestions((prev) => [res.data, ...prev]);
+      setNewQuestion({ title: "", description: "" });
+      setMessage("Question posted successfully!");
+    } catch (err) {
+      console.error(err);
+      setMessage(err.response?.data?.message || "❌ Failed to post question.");
+    } finally {
+      setLoading(false);
+      setTimeout(() => setMessage(""), 3000);
+    }
+  };
+
+  const filteredQuestions = questions.filter((q) => {
+    const matchTitle = q.title
+      ?.toLowerCase()
+      .includes(search.title.toLowerCase());
+    const matchDesc = q.description
+      ?.toLowerCase()
+      .includes(search.description.toLowerCase());
+    return matchTitle && matchDesc;
+  });
+
   return (
     <div className={styles.container}>
+      {/* Steps Section */}
       <div className={styles.steps}>
         <h2>Steps To Write A Good Question.</h2>
         <ul>
           <li>
-            <FaArrowCircleRight className={styles.icon} /> Summarize your
-            problems in a one-line-title.
+            <FaArrowCircleRight className={styles.icon} />
+            Summarize your problems in a one-line-title.
           </li>
           <li>
-            <FaArrowCircleRight className={styles.icon} /> Describe your problem
-            in more detail.
+            <FaArrowCircleRight className={styles.icon} />
+            Describe your problem in more detail.
           </li>
           <li>
-            <FaArrowCircleRight className={styles.icon} /> Describe what you
-            tried and what you expected to happen.
+            <FaArrowCircleRight className={styles.icon} />
+            Describe what you tried and what you expected to happen.
           </li>
           <li>
-            <FaArrowCircleRight className={styles.icon} /> Review your question
-            and post it here.
+            <FaArrowCircleRight className={styles.icon} />
+            Review your question and post it here.
           </li>
         </ul>
       </div>
 
-      <div className={styles.formBox}>
+      {/* Form Section */}
+      <div className={styles.form_box}>
         <h3>Post Your Question</h3>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <input
-            type="text"
-            placeholder="Question title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className={styles.input}
-          />
-          <textarea
-            placeholder="Question detail ..."
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className={styles.textarea}
-          />
-          <button type="submit" className={styles.button}>
-            Post Question
-          </button>
-        </form>
-        {message && <p>{message}</p>}
+
+        <input
+          type="text"
+          name="title"
+          placeholder="Question title"
+          value={newQuestion.title}
+          onChange={(e) => handleChange(e, setNewQuestion)}
+          className={styles.input}
+        />
+        <textarea
+          name="description"
+          placeholder="Describe your question..."
+          value={newQuestion.description}
+          onChange={(e) => handleChange(e, setNewQuestion)}
+          className={styles.textarea}
+        />
+
+        {message && <p className={styles.message}>{message}</p>}
+
+        <button
+          onClick={handlePostQuestion}
+          className={styles.button}
+          disabled={loading}
+        >
+          {loading ? "Posting..." : "Post Question"}
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default QuestionPage;
