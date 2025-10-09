@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Home.module.css";
+import styles from "./home.module.css";
 
 const Home = ({ currentUser, questions }) => {
   const navigate = useNavigate();
