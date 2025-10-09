@@ -1,0 +1,96 @@
+/* Footer */
+.footer {
+  width: 100%;
+  background: #0b0d17;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* --- Common section styles --- */
+.logoSection,
+.linksSection,
+.contactInfo {
+  flex: 1;
+  min-width: 150px;
+}
+
+h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #fca311;
+}
+
+/* --- Logo section --- */
+.logoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding-top: 0.3rem;
+}
+
+.logoSection img {
+  width: 130px;
+  height: auto;
+}
+
+.logoSection a {
+  font-size: 1rem;
+  margin-right: 0.4rem;
+}
+
+/* --- Footer bottom text --- */
+.copy {
+  text-align: center;
+  font-size: 0.7rem;
+  margin-top: 0.6rem;
+  color: #bbb;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logoSection,
+  .linksSection,
+  .contactInfo {
+    align-items: center;
+  }
+
+  .logoSection img {
+    margin: 0 auto;
+  }
+}
