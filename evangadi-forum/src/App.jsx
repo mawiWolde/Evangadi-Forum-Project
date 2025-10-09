@@ -1,15 +1,11 @@
-import './App.css'
-import Answer from './components/Answer/Answer'
-import AnswerPage from './pages/AnswerPage'
+import AppRouter from "./router/AppRouter";
 
 function App() {
- 
   return (
     <>
-      <AnswerPage/>
-<Answer/>
+      <AppRouter />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
