@@ -3,7 +3,6 @@ import Home from "../components/Home/Home";
 import { AuthContext } from "../context/AuthContext";
 import { getAllQuestions } from "../services/api";
 
-
 const HomePage = () => {
   const { user } = useContext(AuthContext);
   const [questions, setQuestions] = useState([]);

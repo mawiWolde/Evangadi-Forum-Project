@@ -1,12 +1,9 @@
 .homeWrapper {
-  max-width: 59%;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fafafa;
-  
 }
 
-/* Top Row */
 .topRow {
   display: flex;
   justify-content: space-between;
@@ -21,160 +18,67 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  margin-top: 70px;
-  transition: all 0.2s ease-in-out;
-  margin-left: 31px;
+  margin-top: 60px;
 }
 
 .askButton:hover {
   background-color: #0056b3;
 }
 
-/* Welcome Text */
 .welcomeText {
   font-size: 1.2rem;
   font-weight: bold;
   margin-top: 60px;
-  color: black;
-  padding-right: 171px;
 }
 
-/* Make “Guest” red */
-.welcomeText span {
-  color: red;
-}
-
-/* Search Bar */
 .searchBar input {
-  width: 91%;
+  width: 100%;
   padding: 10px 15px;
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-bottom: 20px;
-  align-items: center;
 }
 
-/* Questions Section */
 .usersSection {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .userRow {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border-bottom: 1px solid rgb(237, 232, 232);
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 41px 15px;
-  background-color: #f8f8f8fd;
-  color: #4b6786;
-  font-family: "Cavolini", "Comic Sans MS", "Segoe Print", cursive;
-  width: 100%;
- 
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
 }
 
-/* Layout inside each question */
 .userInfo {
   display: flex;
-  align-items: flex-start;
-  gap: 31px;
-  margin-top: 10px;
-  margin-bottom: -21px;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Icon wrapper */
-.iconWrapper {
-  width: 110px;
-  height: 110px;
+.avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
 }
 
-/* Person Icon */
-.personIcon {
-  color: black;
-  font-size: 100px;
-  display: block;
-  line-height: 1;
-}
-
-/* Hover: only circle + icon */
-.iconWrapper:hover {
-  background-color: black;
-}
-
-.iconWrapper:hover .personIcon {
-  color: white;
-}
-
-/* Anonymous text under icon */
-.anonymousLabel {
-  /* font-size: 0.8rem; */
-  font-size: 20px;
-  color: gray;
-  margin-top: 6px;
-  text-align: center;
-}
-
-/* Question and Arrow */
-.questionContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  padding-bottom: -10px;
-  padding-top: 31px;
-
-}
-
-.questionPreviewFull {
-  flex: 1;
-  word-wrap: break-word;
-  font-size: 1rem;
-  color: #4b6786;
+.username {
   font-weight: bold;
-  padding-top: 40px;
-  
 }
 
-/* Detail Arrow Button */
+.questionPreview {
+  margin-left: 10px;
+  color: #555;
+}
+
 .detailButton {
- 
   background-color: transparent;
   border: none;
-  color: #163E72;
-  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  padding-left: 1000px;
-
+  font-size: 1.2rem;
 }
-
-.detailButton:hover {
-  color: #0056b3;
-  transform: scale(1.2);
-}
-
-.questionContainer {
-  display: grid;
-  grid-template-columns: 100px 1fr; /* fixed width for button, rest for text */
-  align-items: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  column-gap: 1rem; /* space between button and text */
-}
-.questionPreview {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-
-
