@@ -1,0 +1,137 @@
+.footer {
+  width: 100%;
+  background-color: #0b0d17;
+  color: #fff;
+  padding: 0.5rem 0.8rem; /* reduced height */
+  position: relative;
+  bottom: 0;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 0.6rem; /* tighter spacing between columns */
+}
+
+/* --- Logo section --- */
+.logoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  flex: 1;
+  min-width: 150px;
+  padding: 1.2rem 0.8rem
+}
+
+.logoSection img {
+  width: 110px; /* increased from 80px */
+  height: auto;
+  margin-bottom: 0.6rem; /* adds space below logo */
+}
+
+
+.logoSection a {
+  color: #fff;
+  font-size: 0.9rem; /* smaller icons */
+  margin-right: 0.35rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.logoSection a:hover {
+  color: #fca311;
+}
+
+/* --- Links section --- */
+.linksSection {
+  flex: 1;
+  min-width: 150px;
+}
+
+.linksSection h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.linksSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksSection li {
+  margin-bottom: 0.2rem;
+}
+
+.linksSection a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.linksSection a:hover {
+  color: #fca311;
+}
+
+/* --- Contact section --- */
+.contactInfo {
+  flex: 1;
+  min-width: 150px;
+}
+
+.contactInfo h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.contactInfo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactInfo li {
+  margin-bottom: 0.2rem;
+}
+
+.contactInfo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.contactInfo a:hover {
+  color: #fca311;
+}
+
+/* --- Copy text --- */
+.copy {
+  text-align: center;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  color: #bbb;
+}
+
+/* --- Responsive layout --- */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .logoSection,
+  .linksSection,
+  .contactInfo {
+    align-items: center;
+  }
+
+  .logoSection img {
+    margin: 0 auto;
+  }
+}
