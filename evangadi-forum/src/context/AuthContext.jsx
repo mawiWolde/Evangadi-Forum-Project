@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     setAuthToken(token || null);
   }, [token]);
 
- 
+  // Check user on app start
   useEffect(() => {
     const checkUser = async () => {
       if (!token) {
