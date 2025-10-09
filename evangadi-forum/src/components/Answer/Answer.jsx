@@ -1,3 +1,6 @@
+
+
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
@@ -28,7 +31,7 @@ const Answer = ({ question, answers, onPostAnswer, currentUser }) => {
       {/* Small heading */}
       <div className={styles.questionSection}>
         <div style={{ fontSize: 14, color: "#333", marginBottom: 6 }}>
-         <h2> Question</h2>
+          <h2> Question</h2>
         </div>
         <h2 className={styles.questionTitle}>{question?.title}</h2>
         <p className={styles.questionContent}>{question?.description}</p>
@@ -55,11 +58,7 @@ const Answer = ({ question, answers, onPostAnswer, currentUser }) => {
                 <span className={styles.username}>
                   {ans.username || ans.user_name || "Anonymous"}
                 </span>
-                {/* <div className={styles.answerMeta}>
-                  {ans.created_at
-                    ? new Date(ans.created_at).toLocaleString()
-                    : ""}
-                </div> */}
+               
               </div>
               <div className={styles.answerContent}>
                 <div className={styles.answerBodyBox}>{ans.answer}</div>
