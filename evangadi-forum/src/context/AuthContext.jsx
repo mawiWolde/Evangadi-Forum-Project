@@ -8,12 +8,12 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [loading, setLoading] = useState(true);
 
-  // Attach token to API instance whenever it changes
+ 
   useEffect(() => {
     setAuthToken(token || null);
   }, [token]);
 
-  // Check user on app start
+ 
   useEffect(() => {
     const checkUser = async () => {
       if (!token) {
